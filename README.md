@@ -13,13 +13,21 @@ I am intending on using SQLite and Postgres for the videos, but if you would lik
 On to the exercise - we will start by creating a database along with a phone_numbers table. Inside that table we want to add the following entries (yes, I know there are duplicates):
 
 1234567890
+
 123 456 7891
+
 (123) 456 7892
+
 (123) 456-7893
+
 123-456-7894
+
 123-456-7890
+
 1234567892
+
 (123)456-7892
+
 You can organize your table however you want, and you may add whatever extra fields you want. My tables will likely vary depending on which of the libraries I’m using, as ORMs like GORM will often add a few fields for us automatically. You may also create the table manually (via raw SQL) if you want, but try to insert the entries using Go code.
 
 Once you have the entries created, our next step is to learn how to iterate over entries in the database using Go code. With this we should be able to retrieve every number so we can start normalizing its contents.
@@ -31,10 +39,12 @@ In the list of numbers provided, the first entry, along with the second to last 
 Once you written code that will successfully take a number in with any format and return the same number in the proper format we are going to use an UPDATE to alter the entries in the database. If the value we are inserting into our database already exists (it is a duplicate), we will instead be deleting the original entry.
 When your program is done your database entries should look like this (the order is irrelevant, but duplicates should be removed):
 
-1234567890  
+1234567890
 
 1234567891
 
 1234567892
+
 1234567893
-1234567894# phone-number-normalizer
+
+1234567894
